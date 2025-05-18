@@ -60,9 +60,16 @@ const ReleasesPage = () => {
             {releases.map((release) => (
               <div key={release.tag_name} className="mb-12 bg-white/60 dark:bg-slate-900/60 backdrop-blur rounded-2xl border border-emerald-400/20 shadow-lg p-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {release.name || release.tag_name}
-                  </h2>
+                  <div className="flex items-center gap-3">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {release.name || release.tag_name}
+                    </h2>
+                    {release.prerelease && (
+                      <span className="px-2 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                        Pre-release
+                      </span>
+                    )}
+                  </div>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     {new Date(release.published_at).toLocaleDateString()}
                   </span>

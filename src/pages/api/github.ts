@@ -25,6 +25,8 @@ export const GET: APIRoute = async ({ url }) => {
       { headers }
     );
 
+    console.log("request", `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}${path}`)
+
     if (!response.ok) {
       throw new Error(`GitHub API error: ${response.statusText}`);
     }
@@ -36,7 +38,7 @@ export const GET: APIRoute = async ({ url }) => {
     });
   } catch (error) {
     console.error('GitHub API error:', error);
-    return new Response(JSON.stringify({ error: 'Failed to fetch from GitHub' }), {
+    return new Response(JSON.stringify({ error: `Failed to fetch from GitHub ${error}` }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });

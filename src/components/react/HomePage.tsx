@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { fetchLatestRelease } from '../../utils/github';
 import type { Asset } from '../../types/github';
+import { Monitor, Apple, Laptop, MonitorSmartphone } from 'lucide-react';
 
 const HomePage = () => {
   const [platform, setPlatform] = useState<'windows' | 'mac' | 'linux' | 'other'>('other');
-  const [downloadUrl, setDownloadUrl] = useState('https://github.com/Citosoft/clok/releases/latest');
+  const [downloadUrl, setDownloadUrl] = useState('/api/github?path=/releases');
   const [downloadLabel, setDownloadLabel] = useState('Download');
   const [error, setError] = useState<string | null>(null);
 
@@ -60,26 +61,10 @@ const HomePage = () => {
               className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-emerald-700 to-purple-800 text-white border border-emerald-200/80 dark:border-emerald-400/40 shadow-lg hover:opacity-90 transition-all"
             >
               <span className="w-6 h-6 flex items-center justify-center">
-                {platform === 'windows' && (
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M1.5 3.75l9.75-1.5v9.5h-9.75zm9.75 10.25v9.5l-9.75-1.5v-8zm2.25-11.13l10.5-1.62v11.25h-10.5zm10.5 12.38v11.25l-10.5-1.5v-9.63z"/>
-                  </svg>
-                )}
-                {platform === 'mac' && (
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M16.365 1.43c0 1.14-.93 2.07-2.07 2.07-1.14 0-2.07-.93-2.07-2.07 0-1.14.93-2.07 2.07-2.07 1.14 0 2.07.93 2.07 2.07zM21.64 17.36c-.23.53-.48 1.03-.76 1.5-.5.8-1.02 1.56-1.56 2.28-.7.9-1.44 1.8-2.36 1.8-.86 0-1.21-.58-2.26-.58-1.05 0-1.44.56-2.26.58-.92 0-1.62-.87-2.36-1.8-.56-.72-1.09-1.48-1.56-2.28-.28-.47-.53-.97-.76-1.5-.5-1.13-.9-2.32-.9-3.6 0-2.7 1.7-4.13 3.37-4.13.8 0 1.38.59 2.26.59.84 0 1.36-.59 2.26-.59 1.13 0 2.32.7 3.04 1.9-2.67 1.28-2.3 4.62.4 5.13z"/>
-                  </svg>
-                )}
-                {platform === 'linux' && (
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm0 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2zm6.36-3.22c-.2.32-.54.52-.92.52-.19 0-.38-.05-.54-.16-.44-.29-.98-.46-1.56-.46-.58 0-1.12.17-1.56.46-.16.11-.35.16-.54.16-.38 0-.72-.2-.92-.52-.2-.32-.22-.72-.06-1.06.36-.7 1.13-1.22 2.08-1.22.95 0 1.72.52 2.08 1.22.16.34.14.74-.06 1.06z"/>
-                  </svg>
-                )}
-                {platform === 'other' && (
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 12l-4-4h3V4h2v4h3l-4 4z"/>
-                  </svg>
-                )}
+                {platform === 'windows' && <Monitor className="w-6 h-6" />}
+                {platform === 'mac' && <Apple className="w-6 h-6" />}
+                {platform === 'linux' && <Laptop className="w-6 h-6" />}
+                {platform === 'other' && <MonitorSmartphone className="w-6 h-6" />}
               </span>
               <span>{downloadLabel}</span>
             </a>
@@ -124,7 +109,7 @@ const HomePage = () => {
                   Get Started Free
                 </a>
                 <a
-                  href="/docs"
+                  href="/documentation"
                   className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-lg text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
                 >
                   View Documentation
