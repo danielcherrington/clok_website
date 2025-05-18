@@ -1,0 +1,31 @@
+{
+  "name": "clok-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Clok landing page",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "download-logos": "node scripts/download-logos.js"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.7",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.1.4",
+    "@heroicons/react": "^2.2.0",
+    "@radix-ui/react-dialog": "^1.1.13",
+    "@radix-ui/react-dropdown-menu": "^2.1.14",
+    "@radix-ui/react-navigation-menu": "^1.2.12",
+    "@stripe/stripe-js": "^2.4.0",
+    "@vercel/blob": "^1.0.1",
+    "astro": "^5.7.13",
+    "lucide-react": "^0.511.0",
+    "nodemailer": "^7.0.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "stripe": "^14.25.0",
+    "tailwindcss": "^3.4.17"
+  }
+}

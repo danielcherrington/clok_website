@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LicenseDisplay from '../components/LicenseDisplay';
+---
+
+<Layout title="Purchase Successful">
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-green-600 dark:text-green-400 mb-4">Thank You for Your Purchase!</h1>
+        <p class="text-gray-600 dark:text-gray-300">Your Clok license has been activated successfully.</p>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <LicenseDisplay client:load />
+      </div>
+    </div>
+  </main>
+</Layout> 

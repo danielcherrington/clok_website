@@ -1,0 +1,433 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="TimeTracker Documentation">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside class="fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
+        <nav class="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
+          <a href="#overview" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+            Overview
+          </a>
+          <div class="ml-4 mt-1 space-y-1">
+            <a href="#time-tracking" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Time Tracking
+            </a>
+            <a href="#activity-management" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Activity Management
+            </a>
+            <a href="#task-management" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Task Management
+            </a>
+            <a href="#reporting" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Reporting
+            </a>
+            <a href="#goals" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Goals
+            </a>
+            <a href="#settings" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Settings
+            </a>
+            <a href="#connectors" class="flex items-center px-2 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+              Connectors
+            </a>
+          </div>
+          <a href="#user-interface" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+            User Interface
+          </a>
+          <a href="#usage-guide" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+            Usage Guide
+          </a>
+          <a href="#best-practices" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+            Best Practices
+          </a>
+          <a href="#troubleshooting" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+            Troubleshooting
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8 ml-64">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">TimeTracker Documentation</h1>
+          
+          <!-- Overview Section -->
+          <section id="overview" class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Overview</h2>
+            <p class="text-gray-600 dark:text-gray-300">
+              TimeTracker is a desktop application designed to help users track and manage their time across different applications and tasks. It provides automatic time tracking, manual time entry, task management, and detailed reporting capabilities.
+            </p>
+          </section>
+
+          <!-- Features Section -->
+          <section id="features" class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Features</h2>
+            
+            <!-- Time Tracking -->
+            <div id="time-tracking" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Time Tracking</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Track your time automatically and manually</p>
+              <div class="mb-4">
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>To start automatic tracking, click the <span class="font-semibold">Start</span> button in the Timer Controls section.</li>
+                  <li>To stop tracking, click the <span class="font-semibold">Stop</span> button.</li>
+                  <li>To add a manual entry, click the <span class="font-semibold">Manual Entry</span> button, fill in the details, and click <span class="font-semibold">Save</span>.</li>
+                  <li>Idle detection will notify you if you are away from your computer for a set period.</li>
+                  <li>Inactive tracking notifications will remind you if tracking is paused or stopped for too long.</li>
+                </ol>
+                <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                  <img src="/images/screenshots/today.png" alt="Time Tracking Interface" class="w-full h-full object-cover rounded" />
+                </div>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Automatic Tracking: The app automatically tracks time spent on different applications and windows</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Manual Tracking: Users can manually add time entries for activities</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Idle Detection: The app detects when the user is idle and can notify them</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Inactive Tracking Notifications: Users receive notifications when tracking has been inactive for a set period</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Activity Management -->
+            <div id="activity-management" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Activity Management</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Manage and organize your activities</p>
+              <div class="mb-4">
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>View your activities grouped by application or window title.</li>
+                  <li>Select multiple activities for bulk actions using the checkboxes.</li>
+                  <li>Assign activities to tasks for better organization.</li>
+                  <li>Review your activity history to see past tracked items.</li>
+                </ol>
+                <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                  <img src="/images/screenshots/history.png" alt="Activity Management Interface" class="w-full h-full object-cover rounded" />
+                </div>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Activity Grouping: Activities can be grouped by either application or window title</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Activity Selection: Users can select multiple activities for bulk actions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Task Assignment: Activities can be assigned to specific tasks</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Activity History: View and manage past activities</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Task Management -->
+            <div id="task-management" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Task Management</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Create and manage tasks</p>
+              <div class="mb-4">
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Click <span class="font-semibold">Add Task</span> to create a new task.</li>
+                  <li>Assign time entries or activities to tasks for detailed tracking.</li>
+                  <li>Monitor time spent on each task in the task list.</li>
+                </ol>
+                <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                  <img src="/images/screenshots/tasks.png" alt="Task Management Interface" class="w-full h-full object-cover rounded" />
+                </div>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Task Creation: Create and manage tasks</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Task Assignment: Assign time entries to specific tasks</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Task Tracking: Monitor time spent on different tasks</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Reporting -->
+            <div id="reporting" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Reporting</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Generate detailed reports</p>
+              <div class="mb-4">
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Navigate to the <span class="font-semibold">Reports</span> section from the sidebar.</li>
+                  <li>Select the type of report you want to generate (activity, task, or custom).</li>
+                  <li>Adjust filters and parameters as needed, then click <span class="font-semibold">Generate</span>.</li>
+                  <li>Download or export reports as needed.</li>
+                </ol>
+                <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                  <img src="/images/screenshots/reports.png" alt="Reporting Interface" class="w-full h-full object-cover rounded" />
+                </div>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Activity Reports: Generate reports based on tracked activities</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Task Reports: View time spent on specific tasks</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Custom Reports: Create custom reports based on various parameters</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Goals -->
+            <div id="goals" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Goals</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Set and track your goals</p>
+              <div class="mb-4">
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Go to the <span class="font-semibold">Goals</span> section.</li>
+                  <li>Click <span class="font-semibold">Add Goal</span> and set your desired parameters.</li>
+                  <li>Track your progress in the goals dashboard.</li>
+                  <li>Receive notifications as you approach or reach your goals.</li>
+                </ol>
+                <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                  <img src="/images/screenshots/goals.png" alt="Goals Interface" class="w-full h-full object-cover rounded" />
+                </div>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Goal Setting: Set time-based goals for different activities or tasks</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Goal Tracking: Monitor progress towards set goals</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Goal Notifications: Receive notifications about goal progress</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Settings -->
+            <div id="settings" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Settings</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Customize your experience</p>
+              <div class="mb-4">
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Open the <span class="font-semibold">Settings</span> section from the sidebar.</li>
+                  <li>Adjust application categories, notification preferences, grouping type, and theme.</li>
+                  <li>Changes are saved automatically and applied instantly.</li>
+                </ol>
+                <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                  <img src="/images/screenshots/settings_categories.png" alt="Settings Interface" class="w-full h-full object-cover rounded" />
+                </div>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Application Categories: Categorize applications for better organization</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Notification Settings: Configure idle and inactive tracking notifications</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Group Type Settings: Choose between grouping by application or window title</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Theme Settings: Customize the application's appearance</span>
+                </li>
+              </ul>
+
+              <!-- Connectors -->
+              <div id="connectors" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Connectors</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Integrate with external services and tools</p>
+                <div class="mb-4">
+                  <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>Navigate to the <span class="font-semibold">Connectors</span> section in Settings.</li>
+                    <li>Choose from available integration options like Jira, GitHub, or other supported services.</li>
+                    <li>Configure the connection by providing necessary credentials and settings.</li>
+                    <li>Enable or disable specific connectors as needed.</li>
+                  </ol>
+                  <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mt-4 mb-2">
+                    <img src="/images/screenshots/settings_connectors.png" alt="Connectors Settings Interface" class="w-full h-full object-cover rounded" />
+                  </div>
+                </div>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                    <span class="ml-3 text-gray-600 dark:text-gray-300">Service Integration: Connect with popular development and project management tools</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                    <span class="ml-3 text-gray-600 dark:text-gray-300">Automatic Sync: Time entries can be automatically synced with connected services</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                    <span class="ml-3 text-gray-600 dark:text-gray-300">Custom Mapping: Configure how time entries map to tasks in external services</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                    <span class="ml-3 text-gray-600 dark:text-gray-300">Connection Management: Easily enable, disable, or reconfigure connections</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- User Interface Section -->
+          <section id="user-interface" class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">User Interface</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Main Components</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Sidebar: Navigation menu for different sections</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Header: Contains main controls and navigation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Timer Controls: Start/stop tracking and manual time entry</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Activity List: Displays current and past activities</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500"></span>
+                  <span class="ml-3 text-gray-600 dark:text-gray-300">Footer: Additional information and controls</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Usage Guide Section -->
+          <section id="usage-guide" class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Usage Guide</h2>
+            <div class="space-y-8">
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Starting Time Tracking</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Click the "Start" button in the Timer Controls section</li>
+                  <li>The app will begin automatically tracking your activities</li>
+                  <li>Activities will be displayed in the Activity List</li>
+                </ol>
+              </div>
+
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Stopping Time Tracking</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Click the "Stop" button in the Timer Controls section</li>
+                  <li>The current tracking session will end</li>
+                  <li>All tracked activities will be saved</li>
+                </ol>
+              </div>
+
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Adding Manual Time Entry</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>Click the manual entry button in Timer Controls</li>
+                  <li>Fill in the required information:
+                    <ul class="list-disc list-inside ml-6 mt-2 space-y-1 text-gray-600 dark:text-gray-300">
+                      <li>Activity description</li>
+                      <li>Start time</li>
+                      <li>End time</li>
+                      <li>Category (optional)</li>
+                    </ul>
+                  </li>
+                  <li>Click "Save" to add the entry</li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <!-- Best Practices Section -->
+          <section id="best-practices" class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Best Practices</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+              <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                <li>Start tracking at the beginning of your work session</li>
+                <li>Regularly review and categorize activities</li>
+                <li>Assign activities to tasks for better organization</li>
+                <li>Set realistic goals and monitor progress</li>
+                <li>Generate reports regularly to analyze time usage</li>
+                <li>Keep application categories updated for accurate tracking</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Troubleshooting Section -->
+          <section id="troubleshooting" class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Troubleshooting</h2>
+            <div class="space-y-8">
+              <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Common Issues</h3>
+                <div class="space-y-6">
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">Tracking Not Starting</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                      <li>Check if the app has necessary permissions</li>
+                      <li>Restart the application</li>
+                      <li>Verify system requirements</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">Activities Not Showing</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                      <li>Check if tracking is active</li>
+                      <li>Verify application categories</li>
+                      <li>Check for any error messages</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">Notifications Not Working</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                      <li>Verify notification permissions</li>
+                      <li>Check notification settings</li>
+                      <li>Ensure the app is running in the background</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Add smooth scrolling to the page */
+  html {
+    scroll-behavior: smooth;
+  }
+</style> 

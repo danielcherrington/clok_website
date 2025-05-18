@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheckoutForm from '../components/CheckoutForm';
+---
+
+<Layout title="Purchase Clok License">
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Purchase Clok License</h1>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+        <CheckoutForm client:load />
+      </div>
+    </div>
+  </main>
+</Layout> 

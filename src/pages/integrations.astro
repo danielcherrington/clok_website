@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IntegrationCard from '../components/IntegrationCard.astro';
+import { connectors } from '../services/integrations';
+
+const availableIntegrations = connectors.filter(connector => connector.available);
+const comingSoonIntegrations = connectors.filter(connector => !connector.available);
+---
+
+<Layout title="Integrations | Clok">
+  <main class="min-h-screen bg-gradient-to-br from-emerald-500/20 via-purple-500/20 to-blue-500/20 dark:from-emerald-500/10 dark:via-purple-500/10 dark:to-blue-500/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Integrations
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Connect Clok with your favorite tools to streamline your workflow and boost productivity
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        {availableIntegrations.length > 0 && (
+          <section>
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+              Available Integrations
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {availableIntegrations.map((integration) => (
+                <IntegrationCard integration={integration} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {comingSoonIntegrations.length > 0 && (
+          <section>
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+              Coming Soon
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {comingSoonIntegrations.map((integration) => (
+                <IntegrationCard integration={integration} />
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  </main>
+</Layout> 

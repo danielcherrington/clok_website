@@ -1,0 +1,42 @@
+---
+import type { Integration } from '../types/integrations';
+
+interface Props {
+  integration: Integration;
+}
+
+const { integration } = Astro.props;
+---
+
+<div class="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200 border border-gray-200/50 dark:border-slate-700/50">
+  <div class="flex items-center space-x-4 mb-4">
+    <div class="w-12 h-12 flex items-center justify-center bg-white/80 dark:bg-slate-700/80 rounded-lg">
+      <img 
+        src={`/images/integrations/${integration.logo}`} 
+        alt={`${integration.name} logo`}
+        class="w-8 h-8 object-contain"
+        onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0id2-6IGg2IHRleHQtZ3JheS00MDAgZGFyazp0ZXh0LWdyYXktNTAwIj48cGF0aCBkPSJNMTIgMTJhMiAyIDAgMSAwIDAtNCAyIDIgMCAwIDAgMCA0eiIvPjxwYXRoIGQ9Ik0xMiAyYTggOCAwIDEgMCAwIDE2IDggOCAwIDAgMCAwLTE2eiIvPjwvc3ZnPg=='"
+      />
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{integration.name}</h3>
+    </div>
+  </div>
+  
+  <div class="space-y-4">
+    <div class="flex flex-wrap gap-2">
+      {integration.features.extractTasks && (
+        <span class="px-2 py-1 bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-full">
+          Task Sync
+        </span>
+      )}
+      {integration.features.logTime && (
+        <span class="px-2 py-1 bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs rounded-full">
+          Time Tracking
+        </span>
+      )}
+    </div>
+    
+    <p class="text-sm text-gray-600 dark:text-gray-300">{integration.description}</p>
+  </div>
+</div> 
