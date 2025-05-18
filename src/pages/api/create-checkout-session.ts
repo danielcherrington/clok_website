@@ -48,7 +48,7 @@ export const POST: APIRoute = async ({ request }) => {
           quantity: 1,
         },
       ],
-      mode: 'payment',
+      mode: 'subscription',
       success_url: `${import.meta.env.PUBLIC_SITE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${import.meta.env.PUBLIC_SITE_URL}/checkout`,
       metadata: {
