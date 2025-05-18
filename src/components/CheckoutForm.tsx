@@ -76,7 +76,7 @@ const CheckoutForm = () => {
             <h3 className="font-medium text-gray-900 dark:text-white">Clok License</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">Annual subscription</p>
           </div>
-          <span className="text-xl font-bold text-gray-900 dark:text-white">£29.99</span>
+          <span className="text-xl font-bold text-gray-900 dark:text-white">£50.00</span>
         </div>
 
         <div className="space-y-2">
