@@ -70,7 +70,8 @@ export const POST: APIRoute = async ({ request }) => {
           email: session.customer_email!,
           licenseType: 'pro' as const,
           expiry: expiryDate.toISOString(),
-          trial: false
+          trial: false,
+          stripeCustomerId: session.customer
         };
 
         const license = licenseGenerator.generateLicense(licenseData);
