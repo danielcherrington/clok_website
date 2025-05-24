@@ -19,7 +19,7 @@ export const connectors: Integration[] = [
       logTime: true
     }
   },
-  {
+  /*{
     id: 'espocrm',
     name: 'EspoCRM',
     description: 'Integrate your EspoCRM workflows with Clok. Track time spent on customer cases, opportunities, and meetings while maintaining your CRM data in sync.',
@@ -40,7 +40,7 @@ export const connectors: Integration[] = [
       extractTasks: true,
       logTime: true
     }
-  },
+  },*/
   {
     id: 'trello',
     name: 'Trello',
@@ -57,7 +57,7 @@ export const connectors: Integration[] = [
     name: 'Asana',
     description: "Bridge your Asana project management with time tracking. Track time spent on tasks and projects while keeping your team's workflow organized.",
     logo: 'asana.svg',
-    available: false,
+    available: true,
     features: {
       extractTasks: true,
       logTime: false
@@ -68,7 +68,7 @@ export const connectors: Integration[] = [
     name: 'Jira',
     description: 'Enhance your Jira workflow with precise time tracking. Log time spent on issues, sprints, and epics while maintaining your agile development process.',
     logo: 'jira.svg',
-    available: false,
+    available: true,
     features: {
       extractTasks: true,
       logTime: true
@@ -90,10 +90,22 @@ export const connectors: Integration[] = [
     name: 'Monday.com',
     description: "Sync your Monday.com projects with time tracking. Monitor time spent on tasks and projects while maintaining your team's workflow and productivity.",
     logo: 'monday.svg',
-    available: false,
+    available: true,
     features: {
       extractTasks: true,
       logTime: true
     }
-  }
+  },
+  {
+    id: 'gmail',
+    name: 'Gmail',
+    description: 'Connect your Gmail account to Clok. Automatically detect emails that are related to tasks and log time spent on them.',
+    logo: 'gmail.svg',
+    available: true,
+    ai: true,
+    features: {
+      extractTasks: true,
+      logTime: false
+    }
+  },
 ]; 
