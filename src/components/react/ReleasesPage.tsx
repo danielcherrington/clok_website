@@ -72,9 +72,11 @@ const ReleasesPage = () => {
                       </span>
                     )}
                   </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    {new Date(release.published_at).toLocaleDateString()}
-                  </span>
+                  {release.published_at && new Date(release.published_at).getFullYear() > 1970 && (
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {new Date(release.published_at).toLocaleDateString()}
+                    </span>
+                  )}
                 </div>
                 <div
                   className="prose dark:prose-invert max-w-none mb-4"
@@ -87,7 +89,7 @@ const ReleasesPage = () => {
                         <a
                           key={asset.id}
                           href={asset.browser_download_url}
-                          className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-gradient-to-r from-emerald-700 to-purple-800 text-white border border-emerald-200/80 dark:border-emerald-400/40 shadow hover:opacity-90 transition-all"
+                          className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-white/60 dark:bg-slate-900/60 backdrop-blur border border-emerald-400/20 text-emerald-700 dark:text-emerald-300 hover:bg-white/80 dark:hover:bg-slate-900/80 transition-all shadow-lg"
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`Download ${asset.name}`}
