@@ -19,5 +19,6 @@ export interface Integration {
   description: string;
   logo: string;
   available: boolean;
+  ai?: boolean;
   features: IntegrationFeatures;
 } 

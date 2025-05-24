@@ -10,7 +10,7 @@ const PricingPage = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            <span className="bg-gradient-to-r from-emerald-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-600 to-purple-700 bg-clip-text text-transparent">
               Simple Licensing
             </span>
           </h1>
@@ -22,12 +22,12 @@ const PricingPage = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-purple-600/10 rounded-3xl blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-purple-700/20 rounded-3xl blur-3xl" />
             
             {/* Main Card */}
             <div className="relative bg-white/60 dark:bg-slate-900/60 backdrop-blur rounded-3xl shadow-2xl overflow-hidden border border-emerald-400/20">
               {/* Header Section */}
-              <div className="p-8 sm:p-12 bg-gradient-to-br from-emerald-500/80 to-purple-600/80 text-white/90">
+              <div className="p-8 sm:p-12 bg-gradient-to-br from-emerald-600/90 to-purple-700/90 text-white/90">
                 <div className="text-center">
                   <h2 className="text-4xl font-bold mb-4">Clok Pro License</h2>
                   <div className="flex items-center justify-center gap-2 mb-6">
