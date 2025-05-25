@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchAllReleases } from '../../utils/github';
 import type { Release } from '../../types/github';
+import { FaWindows } from 'react-icons/fa';
+import { SiApple, SiLinux } from 'react-icons/si';
 
 const ReleasesPage = () => {
   const [releases, setReleases] = useState<Release[]>([]);
@@ -70,9 +72,11 @@ const ReleasesPage = () => {
                       </span>
                     )}
                   </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    {new Date(release.published_at).toLocaleDateString()}
-                  </span>
+                  {release.published_at && new Date(release.published_at).getFullYear() > 1970 && (
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {new Date(release.published_at).toLocaleDateString()}
+                    </span>
+                  )}
                 </div>
                 <div
                   className="prose dark:prose-invert max-w-none mb-4"
@@ -85,32 +89,17 @@ const ReleasesPage = () => {
                         <a
                           key={asset.id}
                           href={asset.browser_download_url}
-                          className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-gradient-to-r from-emerald-700 to-purple-800 text-white border border-emerald-200/80 dark:border-emerald-400/40 shadow hover:opacity-90 transition-all"
+                          className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-white/60 dark:bg-slate-900/60 backdrop-blur border border-emerald-400/20 text-emerald-700 dark:text-emerald-300 hover:bg-white/80 dark:hover:bg-slate-900/80 transition-all shadow-lg"
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`Download ${asset.name}`}
                         >
-                          {asset.name.endsWith('.exe') && (
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                              <path d="M1.5 3.75l9.75-1.5v9.5h-9.75zm9.75 10.25v9.5l-9.75-1.5v-8zm2.25-11.13l10.5-1.62v11.25h-10.5zm10.5 12.38v11.25l-10.5-1.62v-9.63z" />
-                            </svg>
-                          )}
-                          {asset.name.endsWith('.dmg') && (
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                              <path d="M16.365 1.43c0 1.14-.93 2.07-2.07 2.07-1.14 0-2.07-.93-2.07-2.07 0-1.14.93-2.07 2.07-2.07 1.14 0 2.07.93 2.07 2.07zM21.64 17.36c-.23.53-.48 1.03-.76 1.5-.5.8-1.02 1.56-1.56 2.28-.7.9-1.44 1.8-2.36 1.8-.86 0-1.21-.58-2.26-.58-1.05 0-1.44.56-2.26.58-.92 0-1.62-.87-2.36-1.8-.56-.72-1.09-1.48-1.56-2.28-.28-.47-.53-.97-.76-1.5-.5-1.13-.9-2.32-.9-3.6 0-2.7 1.7-4.13 3.37-4.13.8 0 1.38.59 2.26.59.84 0 1.36-.59 2.26-.59 1.13 0 2.32.7 3.04 1.9-2.67 1.28-2.3 4.62.4 5.13z" />
-                            </svg>
-                          )}
-                          {asset.name.endsWith('.AppImage') && (
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                              <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm0 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2zm6.36-3.22c-.2.32-.54.52-.92.52-.19 0-.38-.05-.54-.16-.44-.29-.98-.46-1.56-.46-.58 0-1.12.17-1.56.46-.16.11-.35.16-.54.16-.38 0-.72-.2-.92-.52-.2-.32-.22-.72-.06-1.06.36-.7 1.13-1.22 2.08-1.22.95 0 1.72.52 2.08 1.22.16.34.14.74-.06 1.06z" />
-                            </svg>
-                          )}
-                          {asset.name.endsWith('.deb') && (
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                              <circle cx="12" cy="12" r="10" />
-                              <circle cx="12" cy="12" r="4" fill="white" />
-                            </svg>
-                          )}
+                          {asset.name.endsWith('.exe') && <FaWindows className="w-5 h-5" />}
+                          {asset.name.endsWith('.msi') && <FaWindows className="w-5 h-5" />}
+                          {asset.name.endsWith('.dmg') && <SiApple className="w-5 h-5" />}
+                          {asset.name.endsWith('.AppImage') && <SiLinux className="w-5 h-5" />}
+                          {asset.name.endsWith('.deb') && <SiLinux className="w-5 h-5" />}
+                          {asset.name.endsWith('.rpm') && <SiLinux className="w-5 h-5" />}
                           {asset.name.endsWith('.zip') && (
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                               <rect width="18" height="18" x="3" y="3" rx="2" />
